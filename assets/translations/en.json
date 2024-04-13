@@ -1,3 +1,9 @@
 {
-  "app": "English test"
+  "app": "English test",
+  "login_screen": {
+    "hint": "Level test",
+    "title": "How's Your English?",
+    "desc": "Complete a level test to provide you with an optimal learning experience.",
+    "button": "Let's begin"
+  }
 }

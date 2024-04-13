@@ -3,7 +3,7 @@ import 'package:english_test/theme/app_colors.dart';
 import 'package:english_test/theme/app_branding_colors.dart';
 
 class AppTheme {
-  static const String fontFamily = "Nunito";
+  static const String fontFamily = "Poppins";
 
   static ThemeData get lightTheme {
     return ThemeData(
@@ -48,31 +48,32 @@ class AppTheme {
       ),
       textTheme: const TextTheme(
         headlineSmall: TextStyle(
-          fontSize: 14,
-          color: AppColors.white,
+          fontSize: 16,
+          color: AppColors.tiber,
           fontFamily: fontFamily,
         ),
         headlineMedium: TextStyle(
           fontSize: 20,
-          color: AppColors.white,
+          color: AppColors.tiber,
           fontFamily: fontFamily,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w400,
         ),
         headlineLarge: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.w900,
-          color: AppColors.white,
+          fontSize: 32,
+          fontWeight: FontWeight.w600,
+          color: AppColors.tiber,
           fontFamily: fontFamily,
         )
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           elevation: 0,
-          backgroundColor: AppColors.orange,
+          backgroundColor: AppColors.blue,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(100),
+            borderRadius: BorderRadius.circular(10),
             side: const BorderSide(color: AppColors.white, width: 1)
           ),
+          minimumSize: const Size(double.infinity, 50),
         ),
       ),
       useMaterial3: true,
@@ -138,9 +139,9 @@ class AppTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           elevation: 0,
-          backgroundColor: AppColors.orange,
+          backgroundColor: AppColors.blue,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(100),
+              borderRadius: BorderRadius.circular(10),
               side: const BorderSide(color: AppColors.white, width: 1)
           ),
         ),
