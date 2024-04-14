@@ -48,12 +48,10 @@ class SplashScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: ElevatedButton(
-              onPressed: () => {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const TaskScreen()),
-                )
-              },
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const TaskScreen()),
+              ),
               child: Text(
                 'login_screen.button',
                 style: Theme.of(context).textTheme.headlineSmall!.copyWith(

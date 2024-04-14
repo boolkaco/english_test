@@ -1,16 +1,76 @@
+import 'package:english_test/bloc/app/app_cubit.dart';
+import 'package:english_test/models/sentence_model.dart';
 import 'package:english_test/theme/app_colors.dart';
 import 'package:english_test/widgets/question/entry_answer.dart';
 import 'package:english_test/widgets/question/fill_sentence.dart';
 import 'package:english_test/widgets/question/lens_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class QuestionCard extends StatelessWidget {
-  const QuestionCard({super.key});
+class QuestionCard extends StatefulWidget {
+  final SentenceModel sentence;
+
+  const QuestionCard({super.key, required this.sentence});
+
+  @override
+  State<QuestionCard> createState() => _QuestionCardState();
+}
+
+class _QuestionCardState extends State<QuestionCard> {
+  int? selectedAnswerIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedAnswerIndex = null;
+  }
+
+  String _getLetter(int index) {
+    return String.fromCharCode('A'.codeUnitAt(0) + index);
+  }
+
+  void _handleAnswer(int index) {
+    bool isCorrect =
+        widget.sentence.answers[index] == widget.sentence.correctAnswer;
+    setState(() {
+      selectedAnswerIndex = index;
+    });
+
+    Future.delayed(const Duration(seconds: 1), () {
+      BlocProvider.of<AppCubit>(context).setNextStep(isCorrect);
+      setState(() {
+        selectedAnswerIndex = null;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
+
+    List<Widget> entryAnswers = List.generate(
+      widget.sentence.answers.length,
+      (index) {
+        bool? isSelected = selectedAnswerIndex == index;
+
+        return Padding(
+          padding: EdgeInsets.only(top: index == 0 ? 0 : 8),
+          child: EntryAnswer(
+            text: widget.sentence.answers[index],
+            letter: _getLetter(index),
+            onTap: () => _handleAnswer(index),
+            isSelected: isSelected == true &&
+                    widget.sentence.answers[index] ==
+                        widget.sentence.correctAnswer
+                ? true
+                : isSelected == true
+                    ? false
+                    : null,
+          ),
+        );
+      },
+    );
 
     return Stack(
       clipBehavior: Clip.none,
@@ -45,11 +105,10 @@ class QuestionCard extends StatelessWidget {
                       const SizedBox(
                         width: 16,
                       ),
-                      const Flexible(
+                      Flexible(
                         child: FillSentence(
-                          text:
-                              'What did you buy for Rachel\'s birthday party?',
-                          missingWordIndex: 4,
+                          text: widget.sentence.text,
+                          missingWordIndex: widget.sentence.missingWordIndex,
                         ),
                       )
                     ],
@@ -76,7 +135,7 @@ class QuestionCard extends StatelessWidget {
                       ),
                       Flexible(
                         child: Text(
-                          'A beautiful pink dress.',
+                          widget.sentence.hint,
                           style: Theme.of(context)
                               .textTheme
                               .headlineSmall!
@@ -89,13 +148,7 @@ class QuestionCard extends StatelessWidget {
                     ],
                   ),
                   const Spacer(),
-                  const EntryAnswer(text: 'What', letter: 'A',),
-                  const SizedBox(height: 8),
-                  const EntryAnswer(text: 'Why', letter: 'B',),
-                  const SizedBox(height: 8),
-                  const EntryAnswer(text: 'Where', letter: 'C',),
-                  const SizedBox(height: 8),
-                  const EntryAnswer(text: 'Who', letter: 'D',),
+                  ...entryAnswers,
                   const SizedBox(height: 15),
                 ],
               ),

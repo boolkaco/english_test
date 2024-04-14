@@ -1,25 +1,29 @@
 class SentenceModel {
-  final String sentence;
+  final String text;
   final String hint;
+  final String correctAnswer;
   final List<String> answers;
   final int missingWordIndex;
 
   SentenceModel({
-    required this.sentence,
+    required this.text,
     required this.hint,
+    required this.correctAnswer,
     required this.answers,
     required this.missingWordIndex,
   });
 
   SentenceModel copyWith({
-    String? sentence,
+    String? text,
     String? hint,
+    String? correctAnswer,
     List<String>? answers,
     int? missingWordIndex,
   }) {
     return SentenceModel(
-      sentence: sentence ?? this.sentence,
+      text: text ?? this.text,
       hint: hint ?? this.hint,
+      correctAnswer: correctAnswer ?? this.correctAnswer,
       answers: answers ?? this.answers,
       missingWordIndex: missingWordIndex ?? this.missingWordIndex,
     );
@@ -27,8 +31,9 @@ class SentenceModel {
 
   Map<String, dynamic> toJson() {
     return {
-      'sentence': sentence,
+      'text': text,
       'hint': hint,
+      'correctAnswer': correctAnswer,
       'answers': answers,
       'missingWordIndex': missingWordIndex,
     };
@@ -36,8 +41,9 @@ class SentenceModel {
 
   factory SentenceModel.fromJson(Map<String, dynamic> json) {
     return SentenceModel(
-      sentence: json['sentence'],
+      text: json['text'],
       hint: json['hint'],
+      correctAnswer: json['correctAnswer'],
       answers: json['answers'],
       missingWordIndex: json['missingWordIndex'],
     );

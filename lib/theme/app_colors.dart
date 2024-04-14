@@ -8,6 +8,7 @@ class AppColors {
   static const orange = Color(0xFFFFA93C);
   static const blue = Color(0xFF145C99);
   static const green = Color(0xFF2BAE19);
+  static const red = Color(0xFFF33E3E);
 
   static const tiber = Color(0xFF08263F);
   static const oldLace = Color(0xFFFDF2E9);
