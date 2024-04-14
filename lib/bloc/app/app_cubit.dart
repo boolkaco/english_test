@@ -44,6 +44,17 @@ class AppCubit extends Cubit<AppState> {
     }
   }
 
+  void resetTimer() {
+    _timer?.cancel();
+
+    emit(state.copyWith(
+      remainingTime: const Duration(minutes: 30),
+      isPaused: false,
+    ));
+
+    _startTimer();
+  }
+
   @override
   Future<void> close() {
     _timer?.cancel();
@@ -56,6 +67,7 @@ class AppCubit extends Cubit<AppState> {
     bool isComplete = false;
     if ((state.currentStep + 1) == state.sentences.length) {
       isComplete = true;
+      resetTimer();
     } else {
       step = state.currentStep + 1;
     }

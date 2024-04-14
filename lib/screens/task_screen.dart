@@ -18,7 +18,7 @@ class TaskScreen extends StatelessWidget {
       builder: (context, state) {
         if (state.isComplete) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => const CalculatingScreen()),
             );
@@ -26,7 +26,7 @@ class TaskScreen extends StatelessWidget {
         }
         if (state.remainingTime == Duration.zero) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => const CalculatingScreen()),
             );
