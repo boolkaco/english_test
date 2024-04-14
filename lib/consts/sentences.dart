@@ -17,11 +17,11 @@ class Sentences {
       missingWordIndex: 0,
     ),
     SentenceModel(
-      text: 'How do you like your coffee?',
+      text: 'What coffee do you prefer?',
       hint: 'Black and strong.',
       correctAnswer: 'do',
       answers: ['do', 'did', 'does', 'are'],
-      missingWordIndex: 1,
+      missingWordIndex: 2,
     ),
     SentenceModel(
       text: 'Who was your childhood hero?',
@@ -34,7 +34,7 @@ class Sentences {
       text: 'What is your favorite book?',
       hint: '1984 by Orwell.',
       correctAnswer: 'is',
-      answers: ['your', 'are', 'is', 'do'],
+      answers: ['does', 'are', 'is', 'do'],
       missingWordIndex: 1,
     ),
     SentenceModel(
@@ -52,7 +52,7 @@ class Sentences {
       missingWordIndex: 0,
     ),
     SentenceModel(
-      text: 'Which fruit do you like best?',
+      text: 'What fruit do you like the most?',
       hint: 'Apples.',
       correctAnswer: 'like',
       answers: ['eat', 'like', 'save', 'get'],
