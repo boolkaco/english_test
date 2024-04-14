@@ -1,4 +1,5 @@
 import 'package:english_test/bloc/app/app_cubit.dart';
+import 'package:english_test/screens/menu_screen.dart';
 import 'package:english_test/theme/app_colors.dart';
 import 'package:english_test/widgets/message_box.dart';
 import 'package:english_test/widgets/result_indicator.dart';
@@ -72,7 +73,14 @@ class ResultScreen extends StatelessWidget {
                   SizedBox(
                     width: 262,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MenuScreen(),
+                            ),
+                          );
+                        },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

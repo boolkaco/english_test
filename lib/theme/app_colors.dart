@@ -13,4 +13,11 @@ class AppColors {
   static const tiber = Color(0xFF08263F);
   static const oldLace = Color(0xFFFDF2E9);
   static const alabaster = Color(0xFFFAFAFA);
+  static const alto = Color(0xFFD9D9D9);
+  static const lightWater = Color(0xFFE5F2F8);
+  static const vanillaIce = Color(0xFFF6E6ED);
+  static const lola = Color(0xFFF0EAF0);
+  static const willowBrook = Color(0xFFE8F2E6);
+  static const mystic = Color(0xFFE3E8ED);
+  static const mineShaft = Color(0xFF2E2E2E);
 }
