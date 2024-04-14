@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:english_test/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -24,13 +25,13 @@ class DictionaryButton extends StatelessWidget {
                 ),
                 const SizedBox(width: 7),
                 Text(
-                  'Dictionary',
+                  'dictionary',
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
                     color: AppColors.white,
                   ),
-                ),
+                ).tr(),
               ],
             ),
           ),

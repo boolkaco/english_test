@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:english_test/screens/result_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -46,11 +47,11 @@ class _CalculatingScreenState extends State<CalculatingScreen>
         children: [
           const SizedBox(height: 87),
           Text(
-            'All done',
+            'calculation_screen.title',
             style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                   fontSize: 48,
                 ),
-          ),
+          ).tr(),
           const SizedBox(height: 60),
           Center(
             child: FittedBox(
@@ -64,16 +65,16 @@ class _CalculatingScreenState extends State<CalculatingScreen>
           ),
           const SizedBox(height: 60),
           Text(
-            'You almost there!',
+            'calculation_screen.almost',
             style: Theme.of(context)
                 .textTheme
                 .headlineMedium!
                 .copyWith(fontWeight: FontWeight.w300),
-          ),
+          ).tr(),
           Text(
-            'Few more seconds',
+            'calculation_screen.more',
             style: Theme.of(context).textTheme.headlineMedium,
-          ),
+          ).tr(),
           const Spacer(),
           Center(
             child: RotationTransition(
@@ -87,12 +88,12 @@ class _CalculatingScreenState extends State<CalculatingScreen>
           ),
           const SizedBox(height: 24),
           Text(
-            'We are calculating your level ...',
+            'calculation_screen.calc',
             style: Theme.of(context)
                 .textTheme
                 .headlineMedium!
                 .copyWith(fontWeight: FontWeight.w300),
-          ),
+          ).tr(),
           const SizedBox(height: 30),
         ],
       ),

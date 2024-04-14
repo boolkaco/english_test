@@ -10,5 +10,24 @@
     "hint": "Level test",
     "title": "Let's Begin",
     "desc": "Choose the correct answer to fill in sentence"
-  }
+  },
+  "calculation_screen": {
+    "title": "All done",
+    "almost": "You almost there!",
+    "more": "Few more seconds",
+    "calc": "We are calculating your level ..."
+  },
+  "result_screen": {
+    "title": "Good job, Sarah!",
+    "reward": "Starting reward",
+    "coins": "100 coins",
+    "button": "OK, let's go"
+  },
+  "menu_screen": {
+    "title": "Sarah Jonas",
+    "level": "Level:",
+    "grade": "Grade:"
+  },
+  "dictionary": "Dictionary",
+  "starting_level": "Your starting level"
 }

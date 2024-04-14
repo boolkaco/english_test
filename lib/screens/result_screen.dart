@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:english_test/bloc/app/app_cubit.dart';
 import 'package:english_test/screens/menu_screen.dart';
 import 'package:english_test/theme/app_colors.dart';
@@ -46,29 +47,29 @@ class ResultScreen extends StatelessWidget {
                     child: MessageBox(),
                   ),
                   Text(
-                    'Good job, Sarah!',
+                    'result_screen.title',
                     style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                           fontSize: 26,
                           fontWeight: FontWeight.w600,
                         ),
-                  ),
+                  ).tr(),
                   const SizedBox(height: 24),
                   Text(
-                    'Starting reward',
+                    'result_screen.reward',
                     style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                           fontWeight: FontWeight.w300,
                         ),
-                  ),
+                  ).tr(),
                   const SizedBox(height: 12),
                   const StarsBar(),
                   const SizedBox(height: 16),
                   Text(
-                    '100 coins',
+                    'result_screen.coins',
                     style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                           fontSize: 26,
                           fontWeight: FontWeight.w600,
                         ),
-                  ),
+                  ).tr(),
                   const SizedBox(height: 40),
                   SizedBox(
                     width: 262,
@@ -87,7 +88,7 @@ class ResultScreen extends StatelessWidget {
                             const SizedBox(width: 24),
                             Expanded(
                               child: Text(
-                                'OK, let\'s go',
+                                'result_screen.button',
                                 textAlign: TextAlign.center,
                                 style: Theme.of(context)
                                     .textTheme
@@ -95,7 +96,7 @@ class ResultScreen extends StatelessWidget {
                                     .copyWith(
                                         color: AppColors.white,
                                         fontWeight: FontWeight.w600),
-                              ),
+                              ).tr(),
                             ),
                             FittedBox(
                               fit: BoxFit.scaleDown,

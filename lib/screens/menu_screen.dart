@@ -1,17 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:english_test/bloc/app/app_cubit.dart';
 import 'package:english_test/consts/menus.dart';
-import 'package:english_test/screens/calculating_screen.dart';
 import 'package:english_test/theme/app_colors.dart';
 import 'package:english_test/widgets/dictionary_button.dart';
 import 'package:english_test/widgets/menu_card.dart';
 import 'package:english_test/widgets/profile_avatar.dart';
-import 'package:english_test/widgets/progress_bar.dart';
-import 'package:english_test/widgets/question/question_card.dart';
 import 'package:english_test/widgets/score_indicator.dart';
-import 'package:english_test/widgets/time_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MenuScreen extends StatelessWidget {
   MenuScreen({super.key});
@@ -33,23 +27,23 @@ class MenuScreen extends StatelessWidget {
                     const ProfileAvatar(),
                     const SizedBox(height: 5),
                     Text(
-                      'Sarah Jonas',
+                      'menu_screen.title',
                       style:
                           Theme.of(context).textTheme.headlineLarge!.copyWith(
                                 fontSize: 24,
                               ),
-                    ),
+                    ).tr(),
                     const SizedBox(height: 8),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          'Level:',
+                          'menu_screen.level',
                           style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                             color: AppColors.tiber.withOpacity(0.4),
                             fontWeight: FontWeight.w600,
                           ),
-                        ),
+                        ).tr(),
                         const SizedBox(width: 4),
                         Text(
                           'good',
@@ -67,12 +61,12 @@ class MenuScreen extends StatelessWidget {
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          'Grade:',
+                          'menu_screen.grade',
                           style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                             color: AppColors.tiber.withOpacity(0.4),
                             fontWeight: FontWeight.w600,
                           ),
-                        ),
+                        ).tr(),
                         const SizedBox(width: 4),
                         Text(
                           '9',

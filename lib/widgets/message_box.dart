@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:english_test/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,13 +17,13 @@ class MessageBox extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Your starting level',
+                'starting_level',
                 style: Theme.of(context)
                     .textTheme
                     .headlineSmall!
                     .copyWith(color: AppColors.white),
                 textAlign: TextAlign.center,
-              ),
+              ).tr(),
               Text(
                 'Good',
                 style: Theme.of(context).textTheme.headlineLarge!.copyWith(
