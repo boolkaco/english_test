@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:english_test/bloc/app/app_cubit.dart';
 import 'package:english_test/models/sentence_model.dart';
 import 'package:english_test/theme/app_colors.dart';
@@ -147,8 +149,17 @@ class _QuestionCardState extends State<QuestionCard> {
                       )
                     ],
                   ),
-                  const Spacer(),
-                  ...entryAnswers,
+                  if (Platform.isIOS)
+                    ...[
+                      const Spacer(),
+                      ...entryAnswers,
+                    ]
+                  else if (Platform.isAndroid)
+                    Expanded(
+                      child: ListView(
+                        children: entryAnswers,
+                      ),
+                    ),
                   const SizedBox(height: 15),
                 ],
               ),

@@ -16,116 +16,118 @@ class ResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AppCubit, AppState>(builder: (context, state) {
       return Scaffold(
-        body: Stack(
-          children: [
-            Image.asset('assets/images/bg_decoration.png'),
-            Positioned.fill(
-              top: 260,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 310,
-                    height: 380,
-                    decoration: BoxDecoration(
-                      color: AppColors.alabaster,
-                      border: Border.all(
-                        color: AppColors.black.withOpacity(0.05),
+        body: Center(
+          child: Stack(
+            children: [
+              Image.asset('assets/images/bg_decoration.png'),
+              Positioned.fill(
+                top: 260,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 310,
+                      height: 380,
+                      decoration: BoxDecoration(
+                        color: AppColors.alabaster,
+                        border: Border.all(
+                          color: AppColors.black.withOpacity(0.05),
+                        ),
+                        borderRadius: const BorderRadius.all(Radius.circular(10)),
                       ),
-                      borderRadius: const BorderRadius.all(Radius.circular(10)),
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
-            ),
-            Positioned.fill(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 190),
-                  const Center(
-                    child: MessageBox(),
-                  ),
-                  Text(
-                    'result_screen.title',
-                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                          fontSize: 26,
-                          fontWeight: FontWeight.w600,
-                        ),
-                  ).tr(),
-                  const SizedBox(height: 24),
-                  Text(
-                    'result_screen.reward',
-                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                          fontWeight: FontWeight.w300,
-                        ),
-                  ).tr(),
-                  const SizedBox(height: 12),
-                  const StarsBar(),
-                  const SizedBox(height: 16),
-                  Text(
-                    'result_screen.coins',
-                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                          fontSize: 26,
-                          fontWeight: FontWeight.w600,
-                        ),
-                  ).tr(),
-                  const SizedBox(height: 40),
-                  SizedBox(
-                    width: 262,
-                    child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MenuScreen(),
-                            ),
-                          );
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const SizedBox(width: 24),
-                            Expanded(
-                              child: Text(
-                                'result_screen.button',
-                                textAlign: TextAlign.center,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headlineSmall!
-                                    .copyWith(
-                                        color: AppColors.white,
-                                        fontWeight: FontWeight.w600),
-                              ).tr(),
-                            ),
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: SvgPicture.asset(
-                                'assets/images/arrow_right.svg',
-                                width: 24,
-                                height: 24,
+              Positioned.fill(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 190),
+                    const Center(
+                      child: MessageBox(),
+                    ),
+                    Text(
+                      'result_screen.title',
+                      style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                            fontSize: 26,
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ).tr(),
+                    const SizedBox(height: 24),
+                    Text(
+                      'result_screen.reward',
+                      style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                            fontWeight: FontWeight.w300,
+                          ),
+                    ).tr(),
+                    const SizedBox(height: 12),
+                    const StarsBar(),
+                    const SizedBox(height: 16),
+                    Text(
+                      'result_screen.coins',
+                      style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                            fontSize: 26,
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ).tr(),
+                    const SizedBox(height: 40),
+                    SizedBox(
+                      width: 262,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MenuScreen(),
                               ),
-                            )
-                          ],
-                        )),
-                  )
-                ],
+                            );
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const SizedBox(width: 24),
+                              Expanded(
+                                child: Text(
+                                  'result_screen.button',
+                                  textAlign: TextAlign.center,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineSmall!
+                                      .copyWith(
+                                          color: AppColors.white,
+                                          fontWeight: FontWeight.w600),
+                                ).tr(),
+                              ),
+                              FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: SvgPicture.asset(
+                                  'assets/images/arrow_right.svg',
+                                  width: 24,
+                                  height: 24,
+                                ),
+                              )
+                            ],
+                          )),
+                    )
+                  ],
+                ),
               ),
-            ),
-            Positioned.fill(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 109),
-                  Center(
-                    child: ResultIndicator(
-                      score: state.score,
+              Positioned.fill(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 109),
+                    Center(
+                      child: ResultIndicator(
+                        score: state.score,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
     });
